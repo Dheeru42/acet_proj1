@@ -11,6 +11,7 @@ frequency = 1000  # Frequency in Hertz
 duration = 2000    # Duration in milliseconds
 # Make a beep sound
 winsound.Beep(frequency, duration)
+end_time = time.time() + 5
 # <- beep
 
 # Function to get current location
@@ -57,9 +58,11 @@ def send():
     else:
         print("Unable to retrieve location.")
 
-end_time = time.time() + 5
+## <- testing 
 nump = "UP81BX6915"
 num = "UP81BX6915"
+## -> testing 
+
 # Main program
 if nump==num:
     while time.time() < end_time:
