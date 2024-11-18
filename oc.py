@@ -3,7 +3,8 @@ try :
 except ImportError:
     import Image
 
-from plate import * 
+# from plate import * 
+import cv2
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
@@ -12,7 +13,7 @@ def recText(filename):
     return text
 
 while True:
-    cap()
+    # cap()
     if cv2.waitKey(1) == ord('q'):
         break
     info = recText('1.png')
