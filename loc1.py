@@ -58,14 +58,14 @@ def send():
     else:
         print("Unable to retrieve location.")
 
-## <- testing 
-nump = "UP81BX6915"
-num = "UP81BX6915"
-## -> testing 
+# ## <- testing 
+# nump = "UP81BX6915"
+# num = "UP81BX6915"
+# ## -> testing 
 
-# Main program
-if nump==num:
-    while time.time() < end_time:
-        beepy.beep(sound=1)
-    send()
+# # Main program
+# if nump==num:
+#     while time.time() < end_time:
+#         beepy.beep(sound=1)
+#     send()
         
