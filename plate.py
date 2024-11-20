@@ -13,7 +13,7 @@ min_area = 500
 def cap():
     # _,img = cam.read()  
     
-    images = requests.get("http://192.168.2.100:8080/shot.jpg")
+    images = requests.get("http://192.168.2.149:8080/shot.jpg")
     vedionp = np.array(bytearray(images.content),dtype=np.uint8)
     ved = cv2.imdecode(vedionp,-1)
     img = imutils.resize(ved,width=1000)

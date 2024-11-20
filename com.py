@@ -4,6 +4,8 @@ except ImportError:
     import Image
 
 from plate import * 
+from loc1 import *
+import cv2
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
@@ -17,6 +19,17 @@ while True:
         break
     info = recText('1.png')
     text = ''.join(e for e in info if e.isalnum())
-    print("Number is:",text)
+    # print("Number is:",text)
+    
+    ## <- testing 
+    num = "RJ14CV0002"
+    ## -> testing
+    
+    if text==num:
+        winsound.Beep(frequency, duration)
+        while time.time() < end_time:
+            beepy.beep(sound=1)
+        send(text)
+     
       
 cv2.destroyAllWindows()

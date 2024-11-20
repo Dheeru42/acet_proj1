@@ -10,7 +10,11 @@ from datetime import datetime
 frequency = 1000  # Frequency in Hertz
 duration = 2000    # Duration in milliseconds
 # Make a beep sound
+<<<<<<< HEAD
 winsound.Beep(frequency, duration)
+=======
+
+>>>>>>> master1
 end_time = time.time() + 5
 # <- beep
 
@@ -38,7 +42,11 @@ def send_email(subject, body, to_email):
     server.sendmail(from_email, to_email, message)
     server.quit()
 
+<<<<<<< HEAD
 def send():
+=======
+def send(text):
+>>>>>>> master1
     coordinates = get_current_location()
     
     if coordinates:
@@ -48,7 +56,11 @@ def send():
         
         # Email details
         current_time = datetime.now()
+<<<<<<< HEAD
         subject = f"Your Vehicle Found At This Location on {current_time.strftime('%H:%M:%S')}"
+=======
+        subject = f"Your Vehicle {text} Found At This Location on {current_time.strftime('%H:%M:%S')}"
+>>>>>>> master1
         body = f"Here is your vehicle current location: {google_maps_link}"
         to_email = "dheerajvarshney20@gmail.com"
         
@@ -58,6 +70,7 @@ def send():
     else:
         print("Unable to retrieve location.")
 
+<<<<<<< HEAD
 ## <- testing 
 nump = "UP81BX6915"
 num = "UP81BX6915"
@@ -68,4 +81,16 @@ if nump==num:
     while time.time() < end_time:
         beepy.beep(sound=1)
     send()
+=======
+# ## <- testing 
+# nump = "UP81BX6915"
+# num = "UP81BX6915"
+# ## -> testing 
+
+# # Main program
+# if nump==num:
+#     while time.time() < end_time:
+#         beepy.beep(sound=1)
+#     send()
+>>>>>>> master1
         
