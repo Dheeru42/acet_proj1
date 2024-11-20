@@ -3,7 +3,7 @@ try :
 except ImportError:
     import Image
 
-# from plate import * 
+from plate import * 
 from loc1 import *
 import cv2
 import pytesseract
@@ -14,15 +14,15 @@ def recText(filename):
     return text
 
 while True:
-    # cap()
+    cap()
     if cv2.waitKey(1) == ord('q'):
         break
-    info = recText('ram.png')
+    info = recText('1.png')
     text = ''.join(e for e in info if e.isalnum())
     # print("Number is:",text)
     
     ## <- testing 
-    num = "JaiShreeRam"
+    num = "RJ14CV0002"
     ## -> testing
     
     if text==num:
@@ -30,6 +30,6 @@ while True:
         while time.time() < end_time:
             beepy.beep(sound=1)
         send(text)
-    break   
+     
       
 cv2.destroyAllWindows()
