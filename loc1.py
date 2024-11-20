@@ -10,7 +10,7 @@ from datetime import datetime
 frequency = 1000  # Frequency in Hertz
 duration = 2000    # Duration in milliseconds
 # Make a beep sound
-winsound.Beep(frequency, duration)
+
 end_time = time.time() + 5
 # <- beep
 
@@ -38,7 +38,7 @@ def send_email(subject, body, to_email):
     server.sendmail(from_email, to_email, message)
     server.quit()
 
-def send():
+def send(text):
     coordinates = get_current_location()
     
     if coordinates:
@@ -48,7 +48,7 @@ def send():
         
         # Email details
         current_time = datetime.now()
-        subject = f"Your Vehicle Found At This Location on {current_time.strftime('%H:%M:%S')}"
+        subject = f"Your Vehicle {text} Found At This Location on {current_time.strftime('%H:%M:%S')}"
         body = f"Here is your vehicle current location: {google_maps_link}"
         to_email = "dheerajvarshney20@gmail.com"
         

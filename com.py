@@ -17,17 +17,19 @@ while True:
     # cap()
     if cv2.waitKey(1) == ord('q'):
         break
-    info = recText('1.png')
+    info = recText('ram.png')
     text = ''.join(e for e in info if e.isalnum())
-    print("Number is:",text)
+    # print("Number is:",text)
+    
     ## <- testing 
-    text = ""
-    num = ""
+    num = "JaiShreeRam"
     ## -> testing
+    
     if text==num:
+        winsound.Beep(frequency, duration)
         while time.time() < end_time:
-          beepy.beep(sound=1)
-    send()
-        
+            beepy.beep(sound=1)
+        send(text)
+    break   
       
 cv2.destroyAllWindows()
