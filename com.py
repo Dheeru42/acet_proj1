@@ -19,7 +19,7 @@ while True:
         break
     info = recText('1.png')
     text = ''.join(e for e in info if e.isalnum())
-    # print("Number is:",text)
+    print("Number is:",text)
     
     ## <- testing 
     num = "RJ14CV0002"
