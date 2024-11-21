@@ -41,7 +41,7 @@ def cap():
             # name = 1  # count
             cv2.imwrite('1.png',image)
     # cv2.imshow('Number Plate',img) # Show Image
-    cv2.imshow("Mobile IPCamera",img)
+    # cv2.imshow("Mobile IPCamera",img)
     
 # # Program Start
 # while True:
