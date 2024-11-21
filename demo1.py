@@ -1,8 +1,8 @@
 #  Previous copy of com.py
-try :
-    from PIL import Image
-except ImportError:
-    import Image
+# try :
+#     from PIL import Image
+# except ImportError:
+#     import Image
 
 from demo import *
 # from plate import * 
