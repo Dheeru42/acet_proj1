@@ -3,6 +3,7 @@ from loc1 import *
 import cv2
 from PIL import Image
 import pytesseract
+from playsound import playsound
 
 # Specify the Tesseract executable path if it's not in PATH (Windows only)
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -24,15 +25,9 @@ def preprocess_image(image_path):
     return processed_image
 
 def extract_text(image_path):
-    # Preprocess the image
-    processed_image = preprocess_image(image_path)
 
-    # Save preprocessed image temporarily for Tesseract
-    temp_image_path = "temp_processed_image.png"
-    cv2.imwrite(temp_image_path, processed_image)
-
-    # Perform OCR on the preprocessed image
-    text = pytesseract.image_to_string(Image.open(temp_image_path), lang="eng", config="--psm 6")
+    # Perform OCR on the image
+    text = pytesseract.image_to_string(Image.open(image_path), lang="eng", config="--oem 3 --psm 6")
     return text
 
 # Input image path
@@ -41,13 +36,17 @@ image_path = "1.png"  # Replace with your image file
 while True:
     # cap()
     text = extract_text(image_path)
-    print("Extracted Text:",text)
+    info = ''.join(e for e in text if e.isalnum())
+    print("Number is:",info)
     
     ## <- testing 
     num = "RJ14CV0002"
     ## -> testing
-    if text == "" :
-        print('Not Found')
+    if text=="":
+        while time.time() < end_time:
+        # Play a warning sound file
+            winsound.PlaySound("warning.wav", winsound.SND_FILENAME)
+        
     if text==num:
         winsound.Beep(frequency, duration)
         while time.time() < end_time:
@@ -56,3 +55,7 @@ while True:
     break
       
 cv2.destroyAllWindows()
+
+
+
+
